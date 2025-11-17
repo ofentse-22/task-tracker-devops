@@ -1,0 +1,17 @@
+resources:
+  - name: frontend
+    type: static-website
+    provider: github-pages
+    repo: task-tracker-devops/frontend
+    branch: main
+    url: https://<>.github.io/task-tracker-devops/
+
+  - name: backend
+    type: web-service
+    provider: render
+    repo: task-tracker-devops/backend
+    branch: main
+    buildCommand: npm install
+    startCommand: node server.js
+    url: https://task-tracker-backend.onrender.com
+
