@@ -25,11 +25,11 @@ jobs:
           cd Backend
           npm install
 
-      # 4. Lint tasks.json (optional validation)
-      - name: Lint tasks.json
+      # 4. Lint Task.json
+      - name: Lint Task.json
         run: |
           cd Backend
-          jq . tasks.json > /dev/null
+          jq . Task.json > /dev/null
 
       # 5. Deploy frontend to GitHub Pages
       - name: Deploy frontend to GitHub Pages
