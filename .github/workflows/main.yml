@@ -9,29 +9,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout repository
+     
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # 2. Setup Node.js
+      
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '22'
 
-      # 3. Install backend dependencies
+      
       - name: Install backend dependencies
         run: |
           cd Backend
           npm install
 
-      # 4. Lint Task.json
+     
       - name: Lint Task.json
         run: |
           cd Backend
           jq . Task.json > /dev/null
 
-      # 5. Deploy frontend to GitHub Pages
+      
       - name: Deploy frontend to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
