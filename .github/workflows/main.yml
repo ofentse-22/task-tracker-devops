@@ -25,6 +25,15 @@ jobs:
           cd Backend
           npm install
 
-      # 4. Lint JSON (optional validation)
+      # 4. Lint tasks.json (optional validation)
       - name: Lint tasks.json
+        run: |
+          cd Backend
+          jq . tasks.json > /dev/null
 
+      # 5. Deploy frontend to GitHub Pages
+      - name: Deploy frontend to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./Frontend
